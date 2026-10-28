@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Floral Limpeza</title>
+<meta name="description" content="Floral Limpeza: limpeza pós-obra, pisos, porcelanato e lavagem de alta pressão. Sua casa sempre perfumada. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#ffe3ed">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff5f9;--baby:#ffd9e6;--baby2:#ffeaf2;--rose:#f06292;--rose2:#d6457c;--deep:#b02e63;--ink:#4a1730;--muted:#85506a;--line:#f6c5d7;--card:rgba(255,255,255,.86);--g:linear-gradient(135deg,#f78fb3,#e0558a)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;background:linear-gradient(180deg,#ffe3ed 0%,#fff5f9 45%,#ffeaf2 100%);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Paredão: símbolos de limpeza */
+.wall{position:fixed;inset:-40px;z-index:-2;display:grid;gap:0;color:#ee8fb3;opacity:.7;pointer-events:none;overflow:hidden}
+.wall svg{width:100%;height:100%;display:block}
+.ic{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fl{fill:currentColor}
+.drift{animation:drift 60s linear infinite}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-120px)}}
+.veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 12%,rgba(255,255,255,.7),rgba(255,245,249,.45) 55%,rgba(255,234,242,.5))}
+.petals{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.petals i{position:absolute;top:-30px;width:14px;height:12px;background:linear-gradient(135deg,#fff,#ffc4d8);border-radius:70% 0 70% 0;opacity:.85;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(540deg)}}
+.wrap{max-width:620px;margin:0 auto;padding:18px 16px 40px;position:relative;z-index:1}
+.side{position:absolute;left:16px;top:18px;display:flex;flex-direction:column;gap:14px;z-index:3}
+.ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1.5px solid var(--line);box-shadow:0 6px 18px rgba(224,85,138,.18);transition:transform .2s,border-color .2s;color:var(--rose2)}
+.ico:hover{transform:scale(1.08);border-color:var(--rose)}
+.ico svg{width:24px;height:24px}
+.avatar{position:absolute;right:16px;top:18px;width:78px;height:78px;border-radius:50%;padding:3px;background:var(--g);box-shadow:0 8px 22px rgba(224,85,138,.3);z-index:3}
+.avatar div{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-items:center}
+.avatar svg{width:70%;height:70%;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+header{text-align:center;padding-top:74px}
+.bloom{width:128px;height:128px;margin:0 auto -6px;filter:drop-shadow(0 10px 18px rgba(224,85,138,.35))}
+.bloom svg{width:100%;height:100%;animation:spin 60s linear infinite}
+h1{margin:0;font-size:clamp(44px,12vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--deep)}
+.sub{margin:6px 0 0;font-size:clamp(16px,4.5vw,20px);font-weight:300;letter-spacing:.42em;text-transform:uppercase;color:var(--rose2);padding-left:.42em}
+.handle{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
+.site{display:inline-block;margin-top:10px;padding:6px 14px;border-radius:99px;background:var(--g);color:#fff;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.02em}
+.nfe{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 14px;border-radius:99px;border:1.5px solid var(--rose);background:#fff}
+.nfe b{font-size:14px;font-weight:800;color:var(--rose2)}.nfe span{font-size:10.5px;color:var(--muted)}
+.player{position:relative;margin:30px 0 26px;aspect-ratio:4/5;max-height:78vh;border-radius:22px;overflow:hidden;background:var(--baby);border:3px solid #fff;box-shadow:0 18px 44px rgba(214,69,124,.28)}
+.slides{position:absolute;inset:0}
+.sl{position:absolute;inset:0;transform:translateX(100%);overflow:hidden}
+.sl.mv{transition:transform .6s cubic-bezier(.22,.8,.3,1)}
+.sl img{width:100%;height:100%;object-fit:cover;display:block}
+.sl img.on{animation:kb 9s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:70px 18px 22px;background:linear-gradient(transparent,rgba(120,25,65,.82))}
+.kick{display:block;font-size:11px;font-weight:800;letter-spacing:.24em;color:#ffd1e1;margin-bottom:8px}
+.typ{margin:0;font-size:clamp(18px,5.4vw,24px);font-weight:800;line-height:1.25;min-height:2.5em;color:#fff}
+.typ::after{content:"";display:inline-block;width:3px;height:1em;background:#fff;margin-left:3px;vertical-align:-.12em;animation:bl .8s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.dots{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:4px;z-index:2}
+.dots i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.5);overflow:hidden}
+.dots i b{display:block;height:100%;width:0;background:#fff}
+.dots i.d b{width:100%}.dots i.a b{animation:fill var(--t) linear forwards}
+@keyframes fill{to{width:100%}}
+.nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(176,46,99,.45);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:grid;place-items:center;padding:0}
+.nav:hover{background:rgba(224,85,138,.85)}
+.nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.nav.prev{left:10px}.nav.next{right:10px}
+.card{margin-bottom:14px;border-radius:18px;background:var(--card);border:1.5px solid var(--line);backdrop-filter:blur(8px);overflow:hidden;transition:border-color .25s,box-shadow .25s;box-shadow:0 6px 20px rgba(224,85,138,.08)}
+.card.open{border-color:var(--rose);box-shadow:0 10px 30px rgba(224,85,138,.2)}
+.head{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:0;background:none;color:inherit;padding:18px;cursor:pointer;font-family:inherit}
+.head b{display:block;font-size:clamp(16px,4.6vw,20px);font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--deep)}
+.head small{display:block;margin-top:6px;font-size:11.5px;line-height:1.5;color:var(--muted);font-weight:400}
+.head .t{flex:1}
+.chev{flex:none;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--rose);transition:transform .3s}
+.card.open .chev{transform:rotate(180deg)}
+.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.card.open .body{grid-template-rows:1fr}
+.body>div{overflow:hidden}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 14px 16px}
+.th{background:none;border:0;padding:0;text-align:left;font-family:inherit;cursor:pointer;font-size:10.5px;line-height:1.4;color:var(--muted)}
+.th .v{position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:12px;background:var(--baby);margin-bottom:6px;border:1.5px solid var(--line)}
+.th .v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.th .v.vid::after{content:"";position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:rgba(224,85,138,.9) no-repeat 54% 50%/14px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 12'%3E%3Cpath d='M1 0l9 6-9 6z' fill='%23fff'/%3E%3C/svg%3E");box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.th:focus-visible,.head:focus-visible,.nav:focus-visible,.ico:focus-visible,.cal button:focus-visible,.tabs button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+.ask,.agenda,.pay{margin-top:14px;padding:16px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(224,85,138,.08)}
+.ask h2,.agenda h2,.pay h2{margin:0 0 4px;font-size:17px;font-weight:800;text-transform:uppercase;color:var(--deep)}
+.lead{margin:0 0 12px;font-size:12px;color:var(--muted);line-height:1.55}.lead b{color:var(--rose2)}
+.ask form{display:grid;grid-template-columns:1fr auto;gap:8px}
+.ask label{position:absolute;left:-9999px}
+.ask textarea,.ask input[type=text]{width:100%;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:400 13px/1.5 'Sora',system-ui,sans-serif;padding:9px 12px;margin:0;min-width:0}
+.ask textarea{grid-column:1/-1;min-height:64px;resize:vertical}
+.ask textarea:focus,.ask input:focus{border-color:var(--rose);outline:0}
+.ask .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ask button[type=submit]{padding:0 22px;border:0;border-radius:99px;background:var(--g);color:#fff;font:800 13px 'Sora',sans-serif;cursor:pointer}
+.st{grid-column:1/-1;margin:0;font-size:11.5px;color:var(--muted)}.st:empty{display:none}.st.err{color:#c0264f}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.pr{padding:12px 6px;border-radius:14px;background:#fff;border:1.5px solid var(--line);text-align:center}
+.pr b{display:block;font-size:13px;color:var(--rose2);font-weight:800;margin-bottom:2px}.pr span{font-size:10.5px;color:var(--muted);line-height:1.35;display:block}
+.tabs{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.tabs button{flex:none;padding:9px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--muted);font:600 12px 'Sora',sans-serif;cursor:pointer}
+.tabs button.on{color:#fff;border-color:var(--rose2);background:var(--g)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .wd{font-size:10px;text-align:center;color:var(--muted);padding:4px 0}
+.cal button{aspect-ratio:1;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:600 12px 'Sora',sans-serif;cursor:pointer;padding:0}
+.cal button:hover{border-color:var(--rose)}
+.cal .p{opacity:.3;cursor:default;background:none;border-color:transparent}
+.cal .t{box-shadow:inset 0 0 0 2px var(--rose)}
+.cal .sel{background:var(--g);color:#fff;border-color:var(--rose2)}
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0;font-size:10.5px;color:var(--muted)}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.info{padding:14px;border-radius:14px;background:#fff;border:1.5px solid var(--line);font-size:12.5px;line-height:1.6}
+.info a{display:inline-block;margin-top:10px;padding:10px 16px;border-radius:99px;background:var(--g);color:#fff;font-weight:800;text-decoration:none;font-size:12px}
+.note{margin:12px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+.rules{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:8px}
+.rules li{padding:11px 13px;border-radius:12px;background:#fff;border:1.5px solid var(--line);font-size:12px;line-height:1.5;color:var(--muted)}
+.rules li b{display:block;color:var(--deep);font-size:12.5px;margin-bottom:2px}
+footer{text-align:center;margin-top:34px;font-size:11px;color:var(--muted)}
+footer svg{width:26px;height:26px;display:block;margin:0 auto 6px}
+#modal{position:fixed;inset:0;z-index:50;background:rgba(74,23,48,.86);display:none;place-items:center;padding:16px}
+#modal.on{display:grid}
+#modal video,#modal img{max-width:100%;max-height:82vh;border-radius:14px;background:#000;display:none}
+#mx{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;border:0;background:#fff;color:var(--deep);width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.petals{display:none}}
+</style>
+</head>
+<body>
+<!-- Símbolos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#ffd0e0"/><stop offset="1" stop-color="#f48fb1"/></linearGradient>
+  <!-- Flor de cerejeira: 5 pétalas com a ponta recortada -->
+  <symbol id="sakura" viewBox="-50 -50 100 100">
+   <g id="sk-p"><path d="M0 -2C-15 -10 -23 -33 -10 -47L0 -40L10 -47C23 -33 15 -10 0 -2Z" fill="url(#pg)" stroke="#f06292" stroke-width="1"/><path d="M0 -8V-34" stroke="#f48fb1" stroke-width="1" stroke-linecap="round" opacity=".7"/></g>
+   <use href="#sk-p" transform="rotate(72)"/><use href="#sk-p" transform="rotate(144)"/><use href="#sk-p" transform="rotate(216)"/><use href="#sk-p" transform="rotate(288)"/>
+   <circle r="9" fill="#ffb3cd" opacity=".85"/>
+   <g stroke="#c2185b" stroke-width="1.1" stroke-linecap="round"><path d="M0 0L0 -13M0 0L12 -4M0 0L7 11M0 0L-7 11M0 0L-12 -4"/></g>
+   <g fill="#c2185b"><circle cy="-14" r="1.9"/><circle cx="12.5" cy="-4.2" r="1.9"/><circle cx="7.5" cy="11.5" r="1.9"/><circle cx="-7.5" cy="11.5" r="1.9"/><circle cx="-12.5" cy="-4.2" r="1.9"/></g>
+  </symbol>
+  <!-- Ícones de limpeza (24x24) -->
+  <symbol id="i-broom" viewBox="0 0 24 24"><path class="ic" d="M19 3L11 12M9 11l4 4c-1 3-4 6-9 6 1-3 1-6 5-10zM8 16l2 2M6 18l1.5 1.5"/></symbol>
+  <symbol id="i-bucket" viewBox="0 0 24 24"><path class="ic" d="M4 8h16l-1.8 12H5.8zM4 8c0-2 3.5-3 8-3s8 1 8 3M7 5c1-3 9-3 10 0"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 24 24"><path class="ic" d="M8 10h6v11H8zM9 10V7h5l3-1V9l-3-1M10 4h2M3 6h2M3 9h2M4 12h1"/></symbol>
+  <symbol id="i-sponge" viewBox="0 0 24 24"><rect class="ic" x="3" y="8" width="18" height="9" rx="3"/><path class="fl" d="M7 11h.01M11 13h.01M15 11h.01M17 14h.01M8 14.500h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-bubbles" viewBox="0 0 24 24"><circle class="ic" cx="8" cy="15" r="5"/><circle class="ic" cx="17" cy="8" r="3.500"/><circle class="ic" cx="18" cy="18" r="2"/><path class="ic" d="M6 13a3 3 0 0 1 2-1.500"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path class="ic" d="M12 3C12 9 15 12 21 12C15 12 12 15 12 21C12 15 9 12 3 12C9 12 12 9 12 3Z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path class="ic" d="M12 3C8 9 6 12 6 15a6 6 0 0 0 12 0c0-3-2-6-6-12zM9.500 16a2.500 2.500 0 0 0 2 2"/></symbol>
+  <symbol id="i-mop" viewBox="0 0 24 24"><path class="ic" d="M16 2L11 14M5 14h12l1 4H4zM6 18v3M9 18v3M12 18v3M15 18v3"/></symbol>
+  <symbol id="i-glove" viewBox="0 0 24 24"><path class="ic" d="M7 21v-6L5 10l2-1 2 3V4h2v7V3h2v8V4h2v8V6h2v9l-2 3v3zM7 18h9"/></symbol>
+  <symbol id="i-soap" viewBox="0 0 24 24"><path class="ic" d="M9 9h6v12H9zM10 9V6h3V4h3M10 14h4M4 5.500h.01M6 8h.01" stroke-width="1.600"/></symbol>
+  <symbol id="i-squeegee" viewBox="0 0 24 24"><path class="ic" d="M3 8h14v4H3zM10 12v9M7 21h6"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path class="ic" d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path class="ic" d="M12 20C4 14 3 10 3 8a4.500 4.500 0 0 1 9-1.500A4.500 4.500 0 0 1 21 8c0 2-1 6-9 12z"/></symbol>
+ </defs>
+</svg>
+
+<div class="wall" id="wall" aria-hidden="true"></div>
+<div class="veil"></div>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<div class="wrap">
+  <nav class="side" aria-label="Contatos">
+    <a class="ico" id="wa" href="#" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.500 20.500l1.300-4.200A8.500 8.500 0 1 1 8 19.300z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1.200-1.500-2-1-1 .8c-1-.4-2-1.400-2.400-2.400l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
+    <a class="ico" id="mail" href="mailto:moacirnovo123@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></a>
+    <a class="ico" href="https://maps.app.goo.gl/NXL61sKdSJDJNBag7" aria-label="Localização" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg></a>
+  </nav>
+
+  <div class="avatar" aria-hidden="true"><div><svg viewBox="-50 -50 100 100"><use href="#sakura" x="-50" y="-50" width="100" height="100"/></svg></div></div>
+
+  <header>
+    <div class="bloom" aria-hidden="true"><svg viewBox="-50 -50 100 100"><use href="#sakura" x="-50" y="-50" width="100" height="100"/></svg></div>
+    <h1>Floral</h1>
+    <p class="sub">Limpeza</p>
+    <span class="handle">Pós-obra · Pisos e porcelanato · Casa sempre perfumada</span><br>
+    <a class="site" href="https://florallimpeza.com.br" target="_blank" rel="noopener">florallimpeza.com.br</a><br>
+    <div class="nfe" role="note"><b>NFe em 24h</b><span>após o fechamento do contrato</span></div>
+  </header>
+
+  <section class="player" id="player" aria-label="Galeria de trabalhos">
+    <div class="slides" id="slides"></div>
+    <div class="dots" id="dots"></div>
+    <button class="nav prev" id="prev" type="button" aria-label="Slide anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="nav next" id="next" type="button" aria-label="Próximo slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="cap"><span class="kick" id="kick"></span><p class="typ" id="typ"></p></div>
+  </section>
+
+  <main id="cards">
+    <article class="card open"><button class="head" aria-expanded="true"><span class="t"><b>Limpeza pós-obra</b><small>Remoção de respingos, massa e resíduos de revestimentos, tetos, cantos e sanitários, deixando o ambiente pronto para uso.</small></span><i class="chev"></i></button><div class="body"><div><div class="thumbs">
+      <button class="th" type="button" data-i="obra"><div class="v"><img src="img/t_obra.jpg" alt="Parede com respingos de obra" loading="lazy"></div>Antes: respingos</button>
+      <button class="th" type="button" data-i="teto"><div class="v"><img src="img/t_teto.jpg" alt="Canto de teto limpo" loading="lazy"></div>Teto e cantos</button>
+      <button class="th" type="button" data-i="sanit"><div class="v"><img src="img/t_sanit.jpg" alt="Sanitário limpo" loading="lazy"></div>Sanitário</button>
+    </div></div></div></article>
+
+    <article class="card"><button class="head" aria-expanded="false"><span class="t"><b>Pisos e porcelanato</b><small>Limpeza, brilho e perfume para salas, varandas e recepções, com produtos adequados a cada piso.</small></span><i class="chev"></i></button><div class="body"><div><div class="thumbs">
+      <button class="th" type="button" data-i="sala"><div class="v"><img src="img/t_sala.jpg" alt="Piso de porcelanato brilhando" loading="lazy"></div>Sala</button>
+      <button class="th" type="button" data-i="varanda"><div class="v"><img src="img/t_varanda.jpg" alt="Varanda sendo limpa" loading="lazy"></div>Varanda</button>
+      <button class="th" type="button" data-i="lounge"><div class="v"><img src="img/t_lounge.jpg" alt="Recepção com poltronas" loading="lazy"></div>Recepção</button>
+    </div></div></div></article>
+
+    <article class="card"><button class="head" aria-expanded="false"><span class="t"><b>Lavagem de alta pressão</b><small>Calçadas em pedra portuguesa, garagens e áreas externas lavadas com equipamento profissional.</small></span><i class="chev"></i></button><div class="body"><div><div class="thumbs">
+      <button class="th" type="button" data-v="v1"><div class="v vid"><img src="img/t_v1.jpg" alt="" loading="lazy"></div>Vídeo 1</button>
+      <button class="th" type="button" data-v="v3"><div class="v vid"><img src="img/t_v3.jpg" alt="" loading="lazy"></div>Vídeo 2</button>
+      <button class="th" type="button" data-i="garagem"><div class="v"><img src="img/t_garagem.jpg" alt="Garagem sendo lavada" loading="lazy"></div>Garagem</button>
+    </div></div></div></article>
+
+    <article class="card"><button class="head" aria-expanded="false"><span class="t"><b>Paredes e revestimentos</b><small>Limpeza detalhada de azulejos, pedras e fachadas, removendo manchas e marcas do dia a dia.</small></span><i class="chev"></i></button><div class="body"><div><div class="thumbs">
+      <button class="th" type="button" data-v="v2"><div class="v vid"><img src="img/t_v2.jpg" alt="" loading="lazy"></div>Vídeo 1</button>
+      <button class="th" type="button" data-v="v4"><div class="v vid"><img src="img/t_v4.jpg" alt="" loading="lazy"></div>Vídeo 2</button>
+      <button class="th" type="button" data-i="parede"><div class="v"><img src="img/t_parede.jpg" alt="Parede limpa" loading="lazy"></div>Parede</button>
+    </div></div></div></article>
+  </main>
+
+  <section class="ask" id="duvidas"><h2>Tire sua dúvida</h2><p class="lead">Escreva sua dúvida: a Floral Limpeza recebe e a conversa abre no WhatsApp.</p>
+    <form id="askf" novalidate><label for="aq">Sua pergunta ou dúvida</label><textarea id="aq" name="mensagem" maxlength="1000" required placeholder="Ex.: Quanto custa a limpeza pós-obra do meu apartamento?"></textarea>
+    <label for="an">Seu nome (opcional)</label><input type="text" id="an" name="nome" maxlength="80" autocomplete="name" placeholder="Como posso te chamar?">
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Enviar</button><p class="st" id="ast" role="status" aria-live="polite"></p></form></section>
+
+  <section class="agenda" id="agenda"><h2>Agenda</h2><p class="lead">Atendimento <b>por agendamento, em qualquer data</b>. Escolha o dia e combine os detalhes no WhatsApp.</p>
+    <div class="prices"><div class="pr"><b>Qualquer data</b><span>dias úteis, fins de semana e feriados</span></div><div class="pr"><b>Orçamento</b><span>combinado pelo WhatsApp</span></div><div class="pr"><b>Perfume</b><span>casa sempre cheirosa</span></div></div>
+    <div class="tabs" id="tabs"></div><div class="cal" id="cal"></div>
+    <div class="leg"><span><i style="background:#fff;border:1.5px solid var(--line)"></i>Disponível</span><span><i style="box-shadow:inset 0 0 0 2px var(--rose)"></i>Hoje</span><span><i style="background:var(--g)"></i>Data escolhida</span></div>
+    <div class="info" id="info">Toque em uma data para agendar.</div>
+    <p class="note">Valores e horários são combinados conforme o tipo de serviço e o tamanho do ambiente.</p></section>
+
+  <section class="pay" id="nota"><h2>Emissão de nota</h2><p class="lead"><b>NFe em 24h</b>, sempre após o fechamento do contrato.</p>
+    <ul class="rules"><li><b>Empresas e condomínios</b>Nota fiscal emitida em até 24h após o fechamento do contrato.</li><li><b>Clientes residenciais</b>Nota fiscal emitida em até 24h após o fechamento do contrato.</li></ul>
+    <p class="note">Você será atendido no WhatsApp, onde combinamos data, valor e o contrato.</p></section>
+
+  <footer><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#sakura" x="-50" y="-50" width="100" height="100"/></svg><a href="https://florallimpeza.com.br" style="color:inherit">florallimpeza.com.br</a><br>Todos os direitos reservados · Floral Limpeza</footer>
+</div>
+
+<div id="modal" role="dialog" aria-modal="true"><button id="mx" type="button" aria-label="Fechar">×</button><video controls playsinline></video><img alt=""></div>
+
+<script>
+(function(){
+var WA='554384592153',EM='moacirnovo123@gmail.com',TAG='#cliente ',MSG='Oi, procuro um serviço de limpeza de qualidade. ';
+/* ---------- Paredão de símbolos de limpeza ---------- */
+var ICONS=['broom','bucket','spray','sponge','bubbles','spark','drop','mop','glove','soap','squeegee','house','heart'];
+(function(){
+ var w=document.getElementById('wall'),vw=Math.max(innerWidth,320),cell=vw<700?84:100,cols=Math.ceil((vw+80)/cell),rows=Math.ceil((innerHeight+80+120)/cell),W=cols*cell,H=rows*cell,s='';
+ for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+  var k=(r*3+c*5+(r%2?2:0))%ICONS.length,x=c*cell+(r%2?cell/2:0)+8,y=r*cell+8,rot=((r*37+c*53)%50)-25,sz=cell*.46;
+  s+='<use href="#i-'+ICONS[k]+'" x="'+x.toFixed(0)+'" y="'+y+'" width="'+sz.toFixed(0)+'" height="'+sz.toFixed(0)+'" transform="rotate('+rot+' '+(x+sz/2).toFixed(0)+' '+(y+sz/2)+')"/>';
+ }
+ w.innerHTML='<svg class="drift" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" preserveAspectRatio="xMidYMid slice">'+s+'</svg>';
+})();
+/* pétalas caindo */
+(function(){var p=document.getElementById('petals'),h='';for(var i=0;i<14;i++){h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;--dx:'+((Math.random()*160)-80).toFixed(0)+'px;animation-duration:'+(11+Math.random()*12).toFixed(1)+'s;animation-delay:-'+(Math.random()*20).toFixed(1)+'s;transform:scale('+(.6+Math.random()*.8).toFixed(2)+')"></i>';}p.innerHTML=h;})();
+
+/* ---------- Contatos ---------- */
+document.getElementById('wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(TAG+MSG);
+document.getElementById('mail').addEventListener('click',function(e){e.preventDefault();
+ var su='Orçamento - Floral Limpeza',bd=TAG+MSG,mob=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+ window.open(mob?'mailto:'+EM+'?subject='+encodeURIComponent(su)+'&body='+encodeURIComponent(bd):'https://mail.google.com/mail/?view=cm&fs=1&to='+EM+'&su='+encodeURIComponent(su)+'&body='+encodeURIComponent(bd),'_blank');});
+
+/* ---------- Slideshow ---------- */
+var SL=[
+ ['lounge','RECEPÇÃO','Ambientes comerciais impecáveis, prontos para receber.','50% 50%'],
+ ['sala','PORCELANATO','Piso com brilho de novo e casa sempre perfumada.','50% 60%'],
+ ['obra','PÓS-OBRA','Respingos e resíduos de obra saem do revestimento.','50% 40%'],
+ ['parede','DETALHES','Paredes e cantos limpos até o último detalhe.','50% 40%'],
+ ['teto','ACABAMENTO','Tetos, rodapés e cantos sem marcas.','50% 25%'],
+ ['sanit','SANITÁRIOS','Banheiros higienizados e brilhando.','50% 50%'],
+ ['varanda','VARANDAS','Pisos limpos, frescos e perfumados.','50% 50%'],
+ ['garagem','ÁREAS EXTERNAS','Lavagem de alta pressão em garagens e calçadas.','50% 50%']
+];
+var sw=document.getElementById('slides'),dots=document.getElementById('dots'),kick=document.getElementById('kick'),typ=document.getElementById('typ'),cur=0,iv,tm;
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+SL.forEach(function(s,i){
+ var d=document.createElement('div');d.className='sl';d.innerHTML='<img src="img/'+s[0]+'.jpg" alt="'+s[2].replace(/"/g,'')+'" style="object-position:'+s[3]+'" decoding="async"'+(i?' loading="lazy"':'')+'>';sw.appendChild(d);
+ dots.appendChild(document.createElement('i')).appendChild(document.createElement('b'));});
+var wr=[].slice.call(sw.children);
+var pv=-1,rt;
+function show(n,dir){
+ dir=dir||1;clearInterval(iv);clearTimeout(tm);clearTimeout(rt);
+ n=(n+SL.length)%SL.length;var old=pv,im=[].map.call(wr,function(w){return w.firstChild;});
+ wr.forEach(function(w,j){if(j!==old&&j!==n){w.classList.remove('mv');w.style.transform='translateX(100%)';im[j].classList.remove('on');}});
+ if(old>=0&&old!==n){
+  var nw=wr[n],ow=wr[old];nw.classList.remove('mv');nw.style.transform='translateX('+(dir*100)+'%)';void nw.offsetWidth;
+  nw.classList.add('mv');ow.classList.add('mv');nw.style.transform='translateX(0)';ow.style.transform='translateX('+(-dir*100)+'%)';
+  im[n].classList.add('on');rt=setTimeout(function(){im[old].classList.remove('on');},700);
+ }else{wr[n].classList.remove('mv');wr[n].style.transform='translateX(0)';im[n].classList.add('on');}
+ pv=n;cur=n;
+ var d=SL[n],txt=d[2],dur=txt.length*34+2400,k=0;
+ kick.textContent=d[1];typ.textContent='';
+ [].forEach.call(dots.children,function(x,j){x.className=j<n?'d':(j===n?'a':'');x.style.setProperty('--t',dur+'ms');});
+ if(RM){typ.textContent=txt;tm=setTimeout(function(){show(n+1,1);},dur);return;}
+ iv=setInterval(function(){typ.textContent=txt.slice(0,++k);if(k>=txt.length){clearInterval(iv);tm=setTimeout(function(){show(n+1,1);},2400);}},34);
+}
+show(0);
+document.getElementById('prev').addEventListener('click',function(){show(cur-1,-1);});
+document.getElementById('next').addEventListener('click',function(){show(cur+1,1);});
+document.addEventListener('keydown',function(e){if(/INPUT|TEXTAREA/.test((document.activeElement||{}).tagName||''))return;if(e.key==='ArrowLeft')show(cur-1,-1);else if(e.key==='ArrowRight')show(cur+1,1);});
+var sx=null,sy=0,pl=document.getElementById('player');
+pl.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+pl.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)show(dx<0?cur+1:cur-1,dx<0?1:-1);},{passive:true});
+
+/* ---------- Cards e modal ---------- */
+document.querySelectorAll('.card').forEach(function(c){
+ c.querySelector('.head').addEventListener('click',function(){
+  var o=!c.classList.contains('open');
+  document.querySelectorAll('.card').forEach(function(x){x.classList.remove('open');x.querySelector('.head').setAttribute('aria-expanded','false');});
+  if(o){c.classList.add('open');this.setAttribute('aria-expanded','true');}
+ });
+});
+var M=document.getElementById('modal'),mv=M.querySelector('video'),mi=M.querySelector('img');
+function closeM(){mv.pause();mv.removeAttribute('src');mv.load();M.classList.remove('on');}
+document.querySelectorAll('.th').forEach(function(b){b.addEventListener('click',function(){
+ if(b.dataset.v){mi.style.display='none';mv.style.display='block';mv.poster=b.querySelector('img').src;mv.src='media/'+b.dataset.v+'.mp4';mv.play().catch(function(){});}
+ else{mv.style.display='none';mi.src='img/'+b.dataset.i+'.jpg';mi.alt=b.querySelector('img').alt;mi.style.display='block';}
+ M.classList.add('on');});});
+document.getElementById('mx').addEventListener('click',closeM);
+M.addEventListener('click',function(e){if(e.target===M)closeM();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+
+/* ---------- Agenda: qualquer data, por agendamento ---------- */
+var MN=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+var WD=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+var now=new Date();now.setHours(0,0,0,0);
+var tabs=document.getElementById('tabs'),cal=document.getElementById('cal'),info=document.getElementById('info');
+function p2(n){return ('0'+n).slice(-2);}
+function pick(d,el){
+ [].forEach.call(cal.querySelectorAll('.sel'),function(x){x.classList.remove('sel');});el.classList.add('sel');
+ var ttl=WD[d.getDay()].charAt(0).toUpperCase()+WD[d.getDay()].slice(1)+', '+d.getDate()+' de '+MN[d.getMonth()].toLowerCase()+' de '+d.getFullYear();
+ var m=TAG+'Oi, quero agendar uma limpeza para o dia '+p2(d.getDate())+'/'+p2(d.getMonth()+1)+'/'+d.getFullYear()+'. '+MSG;
+ info.innerHTML='<b>'+ttl+'</b><br>Disponível por agendamento. Conte o serviço e o local no WhatsApp para combinarmos horário e valor.<br><a href="https://wa.me/'+WA+'?text='+encodeURIComponent(m)+'" target="_blank" rel="noopener">Agendar esta data no WhatsApp</a>';
+}
+function draw(y,m){
+ [].forEach.call(tabs.children,function(b){b.classList.toggle('on',+b.dataset.y===y&&+b.dataset.m===m);});
+ cal.innerHTML='';
+ 'DSTQQSS'.split('').forEach(function(c){var s=document.createElement('div');s.className='wd';s.textContent=c;cal.appendChild(s);});
+ var f=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate(),i;
+ for(i=0;i<f;i++)cal.appendChild(document.createElement('span'));
+ for(i=1;i<=n;i++)(function(i){
+  var d=new Date(y,m,i),b=document.createElement('button'),past=d<now;
+  b.type='button';b.textContent=i;b.className=past?'p':'';
+  if(+d===+now)b.className+=' t';
+  if(past)b.disabled=true;else b.addEventListener('click',function(){pick(d,b);});
+  cal.appendChild(b);})(i);
+}
+for(var k=0;k<12;k++){(function(k){
+ var d=new Date(now.getFullYear(),now.getMonth()+k,1),b=document.createElement('button');
+ b.type='button';b.dataset.y=d.getFullYear();b.dataset.m=d.getMonth();b.textContent=MN[d.getMonth()].slice(0,3)+(d.getFullYear()!==now.getFullYear()?' '+String(d.getFullYear()).slice(2):'');b.setAttribute('aria-label',MN[d.getMonth()]+' de '+d.getFullYear());
+ b.addEventListener('click',function(){draw(d.getFullYear(),d.getMonth());});tabs.appendChild(b);})(k);}
+draw(now.getFullYear(),now.getMonth());
+
+/* ---------- Dúvidas -> WhatsApp ---------- */
+var f=document.getElementById('askf'),q=document.getElementById('aq'),n=document.getElementById('an'),st=document.getElementById('ast');
+f.addEventListener('submit',function(e){e.preventDefault();
+ var msg=q.value.trim(),nome=n.value.trim();
+ if(f.elements._honey.value)return;
+ if(msg.length<3){st.className='st err';st.textContent='Escreva sua pergunta antes de enviar.';q.focus();return;}
+ var txt=TAG+(nome?'Oi, sou '+nome+'. ':'Oi! ')+msg;
+ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(txt),'_blank');
+ st.className='st';st.textContent='Abrindo o WhatsApp da Floral Limpeza...';q.value='';
+});
+})();
+</script>
+</body>
+</html>
